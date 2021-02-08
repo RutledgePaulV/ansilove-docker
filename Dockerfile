@@ -1,6 +1,7 @@
-FROM alpine:3.13.1
+FROM debian:10.7
 
-RUN apk -U add cmake gcc make musl-dev gd-dev wget openssl
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y build-essential cmake wget libgd-dev
 
 ENV LIBANSILOVE_VERSION="1.2.8"
 ENV ANSILOVE_VERSION="4.1.4"
